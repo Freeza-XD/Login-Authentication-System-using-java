@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", user);
             response.sendRedirect("home.jsp");
         }else{
-            response.getWriter().println("Invalid email or password.");
+            response.sendRedirect("login.jsp?error=invalid");
         }
     }
 }

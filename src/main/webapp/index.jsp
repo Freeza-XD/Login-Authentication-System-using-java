@@ -3,17 +3,28 @@
 <!DOCTYPE html>
 <html LANG="en">
     <head>
-        <meta charset="UTF-8">
         <title>Login Authentication System</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
-        <h1>Login Authentication System</h1>
-        <p>Trial for checking my TOMCAT</p>
+        <div class="card p-5 text-center">
+            <h1>Login Authentication System</h1>
+            <p class="mt-3">
+                An authentication system built using
+                JSP, Servlets, JDBC and MySQL
+            </p>
 
-        <a href="register.jsp">Register</a>
-        <br><br>
-        <a href="login.jsp">Login</a>
-        
+            <div class="d-grid gap-3 mt-4">
+                <a href="login.jsp" class="btn btn-success btn-lg">
+                    Login
+                </a>
+
+                <a href="register.jsp" class="btn btn-primary btn-lg">
+                    Register
+                </a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

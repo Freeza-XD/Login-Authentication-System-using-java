@@ -1,0 +1,14 @@
+# Maven
+target/
+
+# VS Code
+.vscode/
+
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+#git hub
+.github/
