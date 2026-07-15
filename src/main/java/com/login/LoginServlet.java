@@ -12,11 +12,11 @@ import jakarta.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String email= request.getParameter("email");
+        String identifier= request.getParameter("identifier");
         String password= request.getParameter("password");
 
         UserDAO dao = new UserDAO();
-        User user = dao.loginUser(email, password);
+        User user = dao.loginUser(identifier, password);
         if(user!=null){
             HttpSession session = request.getSession();
             session.setAttribute("user", user);

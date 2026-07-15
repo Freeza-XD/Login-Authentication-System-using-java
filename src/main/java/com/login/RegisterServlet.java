@@ -15,9 +15,14 @@ public class RegisterServlet extends HttpServlet {
         String email= request.getParameter("email");
         String password= request.getParameter("password");
         String confirmPassword= request.getParameter("confirmPassword");
-
-        if(!password.equals(confirmPassword)) 
-            response.getWriter().println("Passwords do not match.");
+        if(password.length()<8 || confirmPassword.length()<8){
+            response.sendRedirect("register.jsp?error=passwordLength");
+            return;
+        }
+        if(!password.equals(confirmPassword)){
+            response.sendRedirect("register.jsp?error=passwordMismatch");
+            return;
+        }
 
         User user = new User(username, email, password);
         UserDAO dao = new UserDAO();

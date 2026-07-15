@@ -22,13 +22,14 @@ public class UserDAO {
         }
     }
 
-    public User loginUser(String email, String password){
-        String sql = "SELECT * FROM users WHERE email=? AND password=?";
+    public User loginUser(String identifier, String password){
+        String sql = "SELECT * FROM users WHERE (email=? OR username=?) AND password=?";
 
         try (Connection con = DBConnection.getConnection()) {
                 PreparedStatement ps= con.prepareStatement(sql);
-                ps.setString(1, email);
-                ps.setString(2, password);
+                ps.setString(1, identifier);
+                ps.setString(2, identifier);
+                ps.setString(3, password);
                 ResultSet rs= ps.executeQuery();
                 
                 if(rs.next()){
